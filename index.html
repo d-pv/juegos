@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lista de juegos</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body{
+				margin:0;
+				padding:0;
+				overflow: hidden;
+			}
+			
+			.elemento{
+				float:left;
+				padding:0;
+				margin:0;
+				border:none;
+				width:50vw;
+				height:50vh;
+				overflow:hidden;
+				cursor: pointer;
+			}
+			
+			.elemento:hover .fondo,
+			.elemento:focus .fondo{
+				-ms-transform: scale(1.2);
+				-moz-transform: scale(1.2);
+				-webkit-transform: scale(1.2);
+				-o-transform: scale(1.2);
+				transform: scale(1.2);
+			}
+			
+			.fondo{
+				width: 100%;
+				height: 100%;
+				background-repeat:no-repeat;
+				background-position: center center;
+				background-size: cover;
+				transition: all .5s;
+			}
+			
+			.fondo::before{
+				content: "";
+				display: none;
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: rgba(52, 73, 94, 0.75);
+				padding:0;
+			}
+			
+			.elemento:hover .fondo:before,
+			.elemento:focus .fondo:before {
+				display: block;
+			}
+			
+			span{
+				color: white; /* Good thing we set a fallback color! */
+				font-family: sans-serif;
+				padding-top: 20vh;
+				width:100%;
+				text-align:center;
+				font-size: 5vw;
+				position: absolute;
+				display: none;
+			}
+			
+			.elemento:hover span,
+			.elemento:focus span {
+				display: block;
+			}
+
+			
+		</style>
+	</head>
+	<body>
+		<div class="elemento" onclick="ira('codigo');"><div class="fondo" style="background-image:url('codigo.jpg')"><span>Código Secreto</span></div></div>
+		<div class="elemento" onclick="ira('dobble');"><div class="fondo" style="background-image:url('dobble.jpg')"><span>Dobble</span></div></div>
+		<div class="elemento" onclick="ira('tabu');"><div class="fondo" style="background-image:url('tabu.jpg')"><span>Tabú</span></div></div>
+		<div class="elemento" onclick="ira('dixit');"><div class="fondo" style="background-image:url('dixit.jpg')"><span>Dixit</span></div></div>
+		
+		<script>
+			function ira(texto){
+				window.location.href = 'https://d-pv.github.io/' + texto;
+			}
+		</script>
+	</body>
+</html>
+
